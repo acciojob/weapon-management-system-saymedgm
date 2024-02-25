@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class WeaponDemo {
 
-   public static class Weapon {
+    public static class Weapon {
         private final String weaponName;
         private int damage;
         private int range;
@@ -16,26 +16,31 @@ public class WeaponDemo {
         }
 
         public String getWeaponName() {
-        	//your code goes here
             return weaponName;
         }
 
         public int getDamage() {
-        	//your code goes here
             return damage;
         }
 
         public void setDamage(int damage) {
-        	//your code goes here
+            if (damage >= 1 && damage <= 100) {
+                this.damage = damage;
+            } else {
+                throw new IllegalArgumentException("Damage should be between 1 and 100.");
+            }
         }
 
         public int getRange() {
-        	//your code goes here
             return range;
         }
 
         public void setRange(int range) {
-        	//your code goes here
+            if (range >= 1 && range <= 500) {
+                this.range = range;
+            } else {
+                throw new IllegalArgumentException("Range should be between 1 and 500.");
+            }
         }
     }
 
@@ -65,4 +70,3 @@ public class WeaponDemo {
         System.out.println("Range: " + userWeapon.getRange());
     }
 }
-
